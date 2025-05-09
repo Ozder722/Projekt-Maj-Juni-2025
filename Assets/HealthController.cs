@@ -1,25 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HealthController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        
+        UpdateHealth();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public float playerhealth;
+    public float playerHealth;
     [SerializeField] private Text healthText;
+
+    //[SerializeField] private TextMeshProUGUI healthText;
 
     public void UpdateHealth()
     {
-        healthText.text = playerhealth.ToString("0");
+        healthText.text = playerHealth.ToString("0");
     }
 
 }

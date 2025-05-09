@@ -4,7 +4,7 @@ public class TouchDamage : MonoBehaviour
 {
 
     [SerializeField] private float touchDamage;
-    [SerializeField] private HealthController HealthController;
+    [SerializeField] private HealthController healthController;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,8 +16,10 @@ public class TouchDamage : MonoBehaviour
 
     void Damage()
     {
-        HealthController.playerhealth = HealthController.playerhealth - touchDamage;
-        HealthController.UpdateHealth();
+        healthController.playerHealth = healthController.playerHealth - touchDamage;
+        healthController.UpdateHealth();
         this.gameObject.SetActive(false);
+
+        
     }
 }
