@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2649642559937557763}
   - component: {fileID: 8189362408994754533}
   - component: {fileID: 4793472685738499836}
+  - component: {fileID: -1716836382906249291}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.52, y: 1.96, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4301, y: 0.5653, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 5988276385878164123, guid: 67dea3aaa5486424f810411de04b168e, type: 3}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,17 +152,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0046759844, y: 0.023379445}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.5056536, y: 2.5617645}
   m_EdgeRadius: 0
 --- !u!114 &4793472685738499836
 MonoBehaviour:
@@ -175,5 +176,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3b54d4588f8ac42ba2b5d37111a39e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchDamage: 20
-  healthController: {fileID: 42033207142903050, guid: afdf0b943af043a478265f7abf51cdbf, type: 3}
+  touchDamage: 10
+--- !u!114 &-1716836382906249291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3846865599708395220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b1e78b1d0217843aba026adaed4f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  distanceBetween: 8
