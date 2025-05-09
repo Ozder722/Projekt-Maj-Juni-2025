@@ -4,20 +4,18 @@ public class TouchDamage : MonoBehaviour
 {
 
     [SerializeField] private float touchDamage;
-    [SerializeField] private HealthController healthController;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Damage();
+            Damage(collision.GetComponent<HealthController>());
         }
     }
 
-    void Damage()
+    void Damage(HealthController healthController)
     {
-        healthController.playerHealth = healthController.playerHealth - touchDamage;
-        healthController.UpdateHealth();
+        healthController.UpdateHealth(-touchDamage);
         this.gameObject.SetActive(false);
 
         
