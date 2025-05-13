@@ -1,28 +1,28 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class HealthController : MonoBehaviour
+public abstract class HealthController : MonoBehaviour
 {
-    float playerHealth = 100;
-    [SerializeField] private TMP_Text healthText;
+    public float health = 5;
+    [SerializeField] private Slider healthText;
     private void Start()
     {
         UpdateHealth(0);
     }
 
-    public void UpdateHealth(float damage)
+    public virtual void UpdateHealth(float damage)
     {
-        playerHealth += damage;
-        healthText.text = playerHealth.ToString("0");
-        if (playerHealth <= 0f)
+        health += damage;
+        healthText.value = health;
+        if (health <= 0f)
         {
             DieAndRespawn();
         }
 
     }
 
-    void DieAndRespawn()
+    public virtual void DieAndRespawn()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

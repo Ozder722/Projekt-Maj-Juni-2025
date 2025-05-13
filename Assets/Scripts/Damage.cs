@@ -1,23 +1,25 @@
 using UnityEngine;
 
-public class TouchDamage : MonoBehaviour
+public class TouchDamage : MonoBehaviour, IDamageAble
 {
 
-    [SerializeField] private float touchDamage;
+    [SerializeField] private int touchDamage;
+
+    public void TakeDamage(int damage)
+    {
+        GetComponent<HealthController>().UpdateHealth(-damage);
+        
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Damage(collision.GetComponent<HealthController>());
+            collision.gameObject.GetComponent<IDamageAble>()?.TakeDamage(-touchDamage);
+            Destroy(this.gameObject);
         }
+
     }
 
-    void Damage(HealthController healthController)
-    {
-        healthController.UpdateHealth(-touchDamage);
-        this.gameObject.SetActive(false);
-
-        
-    }
+   
 }
