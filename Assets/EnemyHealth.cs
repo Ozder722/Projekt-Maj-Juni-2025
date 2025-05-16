@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class EnemyHealth : HealthController
+public class EnemyHealth : HealthController, IDamageAble
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        health = 100;
+        health = maxHealth;
         UpdateHealth(0);
     }
 
@@ -14,6 +14,10 @@ public class EnemyHealth : HealthController
         UpdateHealth(damage);
     }
 
+    protected override void DieAndRespawn()
+    {
+        Destroy(this.gameObject);
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
 

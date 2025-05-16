@@ -1,25 +1,20 @@
 using UnityEngine;
 
-public class TouchDamage : MonoBehaviour, IDamageAble
+
+public class RangeDamage : MonoBehaviour
 {
 
-    [SerializeField] private int touchDamage;
-
-    public void TakeDamage(int damage)
-    {
-        GetComponent<HealthController>().UpdateHealth(-damage);
-        
-    }
+    [SerializeField] private int damage = 5;
+    [SerializeField] private int damageableLayer = 7;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        Debug.Log(collision.gameObject.layer + " : " + (7<<damageableLayer));
+        if (collision.gameObject.layer == damageableLayer)
         {
-            collision.gameObject.GetComponent<IDamageAble>()?.TakeDamage(-touchDamage);
-            Destroy(this.gameObject);
+            collision.gameObject.GetComponent<IDamageAble>()?.TakeDamage(-damage);
+            Debug.Log("av");
+            Destroy(gameObject);
         }
-
     }
-
-   
 }
