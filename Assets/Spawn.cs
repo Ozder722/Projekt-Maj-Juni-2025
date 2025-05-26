@@ -7,9 +7,6 @@ public class Spawn : MonoBehaviour
 {
     public GameObject spawnPrefab;
     public Transform spawnPos;
-    
-
-
 
     void Start()
     {

@@ -2,13 +2,13 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Bow : RangedWeapon
+public class Stone : RangedWeapon
 {
-    
+
     protected override void Fire()
     {
         GameObject arrow = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-        float lifespan = bulletspeed / bulletRange; 
+        float lifespan = bulletspeed / bulletRange;
         Debug.Log(lifespan);
         Destroy(arrow, lifespan);
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -25,7 +25,7 @@ public class Bow : RangedWeapon
 
         arrow.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        
+
 
     }
 }
