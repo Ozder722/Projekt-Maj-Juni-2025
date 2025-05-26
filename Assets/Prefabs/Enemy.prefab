@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  maxHealth: 10
+  maxHealth: 30
   healthText: {fileID: 5861373936301825161}
 --- !u!1 &4290025836574910749
 GameObject:
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6001376821912938143}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:

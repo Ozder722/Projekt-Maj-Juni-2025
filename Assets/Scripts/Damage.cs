@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class RangeDamage : MonoBehaviour
+public class Damage : MonoBehaviour
 {
 
     [SerializeField] private int damage = 5;

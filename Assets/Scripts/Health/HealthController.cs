@@ -10,14 +10,11 @@ public abstract class HealthController : MonoBehaviour
     [SerializeField] private Slider healthText;
     private void Start()
     {
-        UpdateHealth(0);
+        health = maxHealth;
         healthText.maxValue = maxHealth;
+        UpdateHealth(0);
     }
 
-    //protected virtual void Update()
-    //{
-
-    //}
     public virtual void UpdateHealth(float damage)
     {
         Debug.Log("updatehealth");

@@ -854,6 +854,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717773568}
   m_CullTransparentMesh: 1
+--- !u!1 &724878872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3846865599708395220, guid: 59087a9d3d1aa26449477230ae574410, type: 3}
+  m_PrefabInstance: {fileID: 1480188992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &724878879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724878872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ac97ce0649b9d49bd33f144fa413b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  damageableLayer: 6
 --- !u!1001 &925801437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14152,7 +14171,7 @@ GameObject:
   - component: {fileID: 1103391629}
   - component: {fileID: 1103391631}
   - component: {fileID: 1103391630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14190,6 +14209,7 @@ MonoBehaviour:
   damage: 1
   firerate: 0.5
   bulletspeed: 15
+  bulletRange: 30
   bulletPrefab: {fileID: 2626451721828541832, guid: 6b4c09b91c339d24f923a2b2fec92883, type: 3}
   firePoint: {fileID: 1128254772}
 --- !u!212 &1103391631
@@ -14256,7 +14276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1128254772}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: firePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14295,21 +14315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71776efe8203f5e43b5a923357b0b7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  maxHealth: 0
+  health: 1
+  maxHealth: 90
   healthText: {fileID: 495138404}
---- !u!114 &1357370304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357370297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d003e50d65ee0c4eaf836b9fdc88ab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1451975171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14365,6 +14373,10 @@ PrefabInstance:
     - target: {fileID: 3846865599708395220, guid: 59087a9d3d1aa26449477230ae574410, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6001376821912938143, guid: 59087a9d3d1aa26449477230ae574410, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14434,7 +14446,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3846865599708395220, guid: 59087a9d3d1aa26449477230ae574410, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 724878879}
   m_SourcePrefab: {fileID: 100100000, guid: 59087a9d3d1aa26449477230ae574410, type: 3}
 --- !u!1 &1507657650
 GameObject:
@@ -14750,6 +14765,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5165068948456657847, guid: 03f5486178d5ee14eb307072bf216299, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -14760,9 +14779,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5165068948456657847, guid: 03f5486178d5ee14eb307072bf216299, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1357370303}
-    - targetCorrespondingSourceObject: {fileID: 5165068948456657847, guid: 03f5486178d5ee14eb307072bf216299, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1357370304}
   m_SourcePrefab: {fileID: 100100000, guid: 03f5486178d5ee14eb307072bf216299, type: 3}
 --- !u!1001 &8510993868926241169
 PrefabInstance:
