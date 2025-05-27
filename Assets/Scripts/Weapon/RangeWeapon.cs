@@ -1,4 +1,5 @@
-    using UnityEngine;
+using System.Xml.Serialization;
+using UnityEngine;
 
 public abstract class RangedWeapon : Weapon
 {
@@ -14,8 +15,9 @@ public abstract class RangedWeapon : Weapon
 
     protected abstract void Fire();
 
-
-
+    
+     
+    
     protected override void Attack()
     {
         if (Time.time >= nextFireTime)

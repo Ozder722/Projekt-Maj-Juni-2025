@@ -5,6 +5,7 @@ using UnityEngine;
 public class Stone : RangedWeapon
 {
 
+  
     protected override void Fire()
     {
         GameObject arrow = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
